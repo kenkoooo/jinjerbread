@@ -76,6 +76,13 @@ impl TimeCard {
     }
 }
 
+#[derive(Debug)]
+pub enum Status {
+    Working,
+    CheckedOut,
+    Other,
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

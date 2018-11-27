@@ -1,3 +1,5 @@
+extern crate chrono;
+extern crate chrono_tz;
 extern crate reqwest;
 extern crate serde;
 extern crate serde_json;
