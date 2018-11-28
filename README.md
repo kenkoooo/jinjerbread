@@ -8,9 +8,15 @@ A library to operate [Jinjer](https://kintai.jinjer.biz/) by Rust.
 
 # Example Application
 ## CLI tool to sign in/out [./src/bin/change_status.rs](./src/bin/change_status.rs)
+
+You need to fill the following enviroment variables to use this tool.
+- `JINJER_CODE` Your company code
+- `JINJER_EMAIL` Your company e-mail address
+- `JINJER_PASSWORD` Your password
+
 ```bash
-cargo run --bin change_status [company_code] [email] [password]
+./change_status
 
 # Example
-cargo run --bin change_status 1234 kenkoooo@company.example.com this_is_password
+env JINJER_CODE=12345 JINJER_EMAIL=kenkoooo@example.com JINJER_PASSWORD=this_is_password ./change_status
 ```

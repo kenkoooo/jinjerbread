@@ -6,12 +6,15 @@ use jinjerbread::model::{Check, Status};
 use jinjerbread::operation;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let company_code = args[1].parse().unwrap();
-    let email = &args[2];
-    let password = &args[3];
+    let company_code = env::var("JINJER_CODE")
+        .expect("Enviroment variable 'JINJER_CODE' is not set!")
+        .parse::<usize>()
+        .expect("Enviroment variable 'JINJER_CODE' is not a positive integer!");
+    let email = env::var("JINJER_EMAIL").expect("Enviroment variable 'JINJER_EMAIL' is not set!");
+    let password =
+        env::var("JINJER_PASSWORD").expect("Enviroment variable 'JINJER_PASSWORD' is not set!");
 
-    let result = operation::login(company_code, email, password).unwrap();
+    let result = operation::login(company_code, &email, &password).unwrap();
     let status = operation::get_status(&result.data);
     match status {
         Status::Working => println!(
