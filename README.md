@@ -10,9 +10,9 @@ A library to operate [Jinjer](https://kintai.jinjer.biz/) by Rust.
 ## CLI tool to sign in/out [./example/change_status.rs](./example/change_status.rs)
 
 ### Build 
-By the following command, an executable `change_status` will be generated in `./target/release/`.
+By the following command, an executable `change_status` will be generated in `./target/debug/`.
 ```bash
-cargo build --release
+cargo build
 ```
 
 ### Run
