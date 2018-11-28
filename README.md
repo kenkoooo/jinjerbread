@@ -6,8 +6,8 @@ A library to operate [Jinjer](https://kintai.jinjer.biz/) by Rust.
 - Rust (>=2018)
 - Cargo
 
-# Example Application
-## CLI tool to sign in/out [./src/bin/change_status.rs](./src/bin/change_status.rs)
+# Example Applications
+## CLI tool to sign in/out [./example/change_status.rs](./example/change_status.rs)
 
 ### Build 
 By the following command, an executable `change_status` will be generated in `./target/release/`.
