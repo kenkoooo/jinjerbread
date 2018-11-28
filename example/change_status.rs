@@ -17,14 +17,22 @@ fn main() {
     let result = operation::login(company_code, &email, &password).unwrap();
     let status = operation::get_status(&result.data);
     match status {
-        Status::Working => println!(
-            "{}",
-            operation::check(&result.data, Check::Out).unwrap().message
-        ),
-        Status::CheckedOut => println!(
-            "{}",
-            operation::check(&result.data, Check::In).unwrap().message
-        ),
+        Status::Working => {
+            println!("Now you are working.");
+            println!("Requesting to check out...");
+            println!(
+                "Output message: {}",
+                operation::check(&result.data, Check::Out).unwrap().message
+            );
+        }
+        Status::CheckedOut => {
+            println!("Now you are not working.");
+            println!("Requesting to check in...");
+            println!(
+                "Output message: {}",
+                operation::check(&result.data, Check::In).unwrap().message
+            );
+        }
         _ => {}
     }
 }
