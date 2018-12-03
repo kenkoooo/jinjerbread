@@ -33,6 +33,6 @@ fn main() {
                 operation::check(&result.data, Check::In).unwrap().message
             );
         }
-        _ => {}
+        _ => unimplemented!(),
     }
 }
